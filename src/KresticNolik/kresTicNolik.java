@@ -32,6 +32,10 @@ public class kresTicNolik {
 
         for (int win = 0; win <= 3; ) {
 
+            boolean first = false;
+
+            do {
+
                 System.out.println("Ход игрока: " + firstPlayer + ": ");
                 int x = Integer.parseInt(reader.readLine());
 
@@ -57,59 +61,23 @@ public class kresTicNolik {
                     System.out.println("Неверный ввод: попробуйте еще раз!!!");
                     continue;
                 }
+                first = true;
 
-                if ((gameField[0][0] + gameField[0][1] + gameField[0][2]).equals("XXX") ||
-                        (gameField[1][0] + gameField[1][1] + gameField[1][2]).equals("XXX") ||
-                        (gameField[2][0] + gameField[2][1] + gameField[2][2]).equals("XXX") ||
-                        (gameField[0][0] + gameField[1][0] + gameField[2][0]).equals("XXX") ||
-                        (gameField[0][1] + gameField[1][1] + gameField[2][1]).equals("XXX") ||
-                        (gameField[0][2] + gameField[1][2] + gameField[2][2]).equals("XXX") ||
-                        (gameField[0][0] + gameField[1][1] + gameField[2][2]).equals("XXX") ||
-                        (gameField[0][2] + gameField[1][1] + gameField[2][0]).equals("XXX")) {
-                    System.out.println("Игру выиграл игрок: " + firstPlayer);
-                    break;
-                }
+            }while(!first);
 
-                System.out.println(gameField[0][0] + " | " + gameField[0][1] + " | " + gameField[0][2]);
-                System.out.println("---------");
-                System.out.println(gameField[1][0] + " | " + gameField[1][1] + " | " + gameField[1][2]);
-                System.out.println("---------");
-                System.out.println(gameField[2][0] + " | " + gameField[2][1] + " | " + gameField[2][2]);
+            System.out.println(gameField[0][0] + " | " + gameField[0][1] + " | " + gameField[0][2]);
+            System.out.println("---------");
+            System.out.println(gameField[1][0] + " | " + gameField[1][1] + " | " + gameField[1][2]);
+            System.out.println("---------");
+            System.out.println(gameField[2][0] + " | " + gameField[2][1] + " | " + gameField[2][2]);
 
-                if (!gameField[0][0].equals("") && gameField[0][0] != "1" &&
-                        !gameField[0][1].equals("") && gameField[0][1] != "2" &&
-                        !gameField[0][2].equals("") && gameField[0][2] != "3" &&
-                        !gameField[1][0].equals("") && gameField[1][0] != "4" &&
-                        !gameField[1][1].equals("") && gameField[1][1] != "5" &&
-                        !gameField[1][2].equals("") && gameField[1][2] != "6" &&
-                        !gameField[2][0].equals("") && gameField[2][0] != "7" &&
-                        !gameField[2][1].equals("") && gameField[2][1] != "8" &&
-                        !gameField[2][2].equals("") && gameField[2][2] != "9" &&
-                        !(gameField[0][0] + gameField[0][1] + gameField[0][2]).equals("XXX") &&
-                        !(gameField[1][0] + gameField[1][1] + gameField[1][2]).equals("XXX") &&
-                        !(gameField[2][0] + gameField[2][1] + gameField[2][2]).equals("XXX") &&
-                        !(gameField[0][0] + gameField[1][0] + gameField[2][0]).equals("XXX") &&
-                        !(gameField[0][1] + gameField[1][1] + gameField[2][1]).equals("XXX") &&
-                        !(gameField[0][2] + gameField[1][2] + gameField[2][2]).equals("XXX") &&
-                        !(gameField[0][0] + gameField[1][1] + gameField[2][2]).equals("XXX") &&
-                        !(gameField[0][2] + gameField[1][1] + gameField[2][0]).equals("XXX") &&
-                        !(gameField[0][0] + gameField[0][1] + gameField[0][2]).equals("OOO") &&
-                        !(gameField[1][0] + gameField[1][1] + gameField[1][2]).equals("OOO") &&
-                        !(gameField[2][0] + gameField[2][1] + gameField[2][2]).equals("OOO") &&
-                        !(gameField[0][0] + gameField[1][0] + gameField[2][0]).equals("OOO") &&
-                        !(gameField[0][1] + gameField[1][1] + gameField[2][1]).equals("OOO") &&
-                        !(gameField[0][2] + gameField[1][2] + gameField[2][2]).equals("OOO") &&
-                        !(gameField[0][0] + gameField[1][1] + gameField[2][2]).equals("OOO") &&
-                        !(gameField[0][2] + gameField[1][1] + gameField[2][0]).equals("OOO")) {
-                    System.out.println("Ничья");
-                    break;
-                }
-
+            boolean second = false;
+            do {
 
                 System.out.println("Ход игрока: " + secondPlayer + ": ");
                 int o = Integer.parseInt(reader.readLine());
 
-                if (o == 1 && gameField[0][0] == "1" ) {
+                if (o == 1 && gameField[0][0] == "1") {
                     gameField[0][0] = "O";
                 } else if (o == 2 && gameField[0][1] == "2") {
                     gameField[0][1] = "O";
@@ -131,27 +99,73 @@ public class kresTicNolik {
                     System.out.println("Неверный ввод: попробуйте еще раз");
                     continue;
                 }
+                second = true;
 
-                System.out.println(gameField[0][0] + " | " + gameField[0][1] + " | " + gameField[0][2]);
-                System.out.println("---------");
-                System.out.println(gameField[1][0] + " | " + gameField[1][1] + " | " + gameField[1][2]);
-                System.out.println("---------");
-                System.out.println(gameField[2][0] + " | " + gameField[2][1] + " | " + gameField[2][2]);
+            }while(!second);
 
-                if ((gameField[0][0] + gameField[0][1] + gameField[0][2]).equals("OOO") ||
-                        (gameField[1][0] + gameField[1][1] + gameField[1][2]).equals("OOO") ||
-                        (gameField[2][0] + gameField[2][1] + gameField[2][2]).equals("OOO") ||
-                        (gameField[0][0] + gameField[1][0] + gameField[2][0]).equals("OOO") ||
-                        (gameField[0][1] + gameField[1][1] + gameField[2][1]).equals("OOO") ||
-                        (gameField[0][2] + gameField[1][2] + gameField[2][2]).equals("OOO") ||
-                        (gameField[0][0] + gameField[1][1] + gameField[2][2]).equals("OOO") ||
-                        (gameField[0][2] + gameField[1][1] + gameField[2][0]).equals("OOO")) {
-                    System.out.println("Игру выиграл игрок: " + secondPlayer);
-                    break;
-                }
 
+
+            if ((gameField[0][0] + gameField[0][1] + gameField[0][2]).equals("XXX") ||
+                    (gameField[1][0] + gameField[1][1] + gameField[1][2]).equals("XXX") ||
+                    (gameField[2][0] + gameField[2][1] + gameField[2][2]).equals("XXX") ||
+                    (gameField[0][0] + gameField[1][0] + gameField[2][0]).equals("XXX") ||
+                    (gameField[0][1] + gameField[1][1] + gameField[2][1]).equals("XXX") ||
+                    (gameField[0][2] + gameField[1][2] + gameField[2][2]).equals("XXX") ||
+                    (gameField[0][0] + gameField[1][1] + gameField[2][2]).equals("XXX") ||
+                    (gameField[0][2] + gameField[1][1] + gameField[2][0]).equals("XXX")) {
+                System.out.println("Игру выиграл игрок: " + firstPlayer);
+                break;
+            }
+
+            if (!gameField[0][0].equals("") && gameField[0][0] != "1" &&
+                    !gameField[0][1].equals("") && gameField[0][1] != "2" &&
+                    !gameField[0][2].equals("") && gameField[0][2] != "3" &&
+                    !gameField[1][0].equals("") && gameField[1][0] != "4" &&
+                    !gameField[1][1].equals("") && gameField[1][1] != "5" &&
+                    !gameField[1][2].equals("") && gameField[1][2] != "6" &&
+                    !gameField[2][0].equals("") && gameField[2][0] != "7" &&
+                    !gameField[2][1].equals("") && gameField[2][1] != "8" &&
+                    !gameField[2][2].equals("") && gameField[2][2] != "9" &&
+                    !(gameField[0][0] + gameField[0][1] + gameField[0][2]).equals("XXX") &&
+                    !(gameField[1][0] + gameField[1][1] + gameField[1][2]).equals("XXX") &&
+                    !(gameField[2][0] + gameField[2][1] + gameField[2][2]).equals("XXX") &&
+                    !(gameField[0][0] + gameField[1][0] + gameField[2][0]).equals("XXX") &&
+                    !(gameField[0][1] + gameField[1][1] + gameField[2][1]).equals("XXX") &&
+                    !(gameField[0][2] + gameField[1][2] + gameField[2][2]).equals("XXX") &&
+                    !(gameField[0][0] + gameField[1][1] + gameField[2][2]).equals("XXX") &&
+                    !(gameField[0][2] + gameField[1][1] + gameField[2][0]).equals("XXX") &&
+                    !(gameField[0][0] + gameField[0][1] + gameField[0][2]).equals("OOO") &&
+                    !(gameField[1][0] + gameField[1][1] + gameField[1][2]).equals("OOO") &&
+                    !(gameField[2][0] + gameField[2][1] + gameField[2][2]).equals("OOO") &&
+                    !(gameField[0][0] + gameField[1][0] + gameField[2][0]).equals("OOO") &&
+                    !(gameField[0][1] + gameField[1][1] + gameField[2][1]).equals("OOO") &&
+                    !(gameField[0][2] + gameField[1][2] + gameField[2][2]).equals("OOO") &&
+                    !(gameField[0][0] + gameField[1][1] + gameField[2][2]).equals("OOO") &&
+                    !(gameField[0][2] + gameField[1][1] + gameField[2][0]).equals("OOO")) {
+                System.out.println("Ничья");
+                break;
+            }
+
+            System.out.println(gameField[0][0] + " | " + gameField[0][1] + " | " + gameField[0][2]);
+            System.out.println("---------");
+            System.out.println(gameField[1][0] + " | " + gameField[1][1] + " | " + gameField[1][2]);
+            System.out.println("---------");
+            System.out.println(gameField[2][0] + " | " + gameField[2][1] + " | " + gameField[2][2]);
+
+            if ((gameField[0][0] + gameField[0][1] + gameField[0][2]).equals("OOO") ||
+                    (gameField[1][0] + gameField[1][1] + gameField[1][2]).equals("OOO") ||
+                    (gameField[2][0] + gameField[2][1] + gameField[2][2]).equals("OOO") ||
+                    (gameField[0][0] + gameField[1][0] + gameField[2][0]).equals("OOO") ||
+                    (gameField[0][1] + gameField[1][1] + gameField[2][1]).equals("OOO") ||
+                    (gameField[0][2] + gameField[1][2] + gameField[2][2]).equals("OOO") ||
+                    (gameField[0][0] + gameField[1][1] + gameField[2][2]).equals("OOO") ||
+                    (gameField[0][2] + gameField[1][1] + gameField[2][0]).equals("OOO")) {
+                System.out.println("Игру выиграл игрок: " + secondPlayer);
+                break;
+            }
         }
     }
 }
+
 
 
