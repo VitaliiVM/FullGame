@@ -63,7 +63,20 @@ public class kresTicNolik {
                 }
                 first = true;
 
-            }while(!first);
+            } while(!first);
+
+
+            if ((gameField[0][0] + gameField[0][1] + gameField[0][2]).equals("XXX") ||
+                    (gameField[1][0] + gameField[1][1] + gameField[1][2]).equals("XXX") ||
+                    (gameField[2][0] + gameField[2][1] + gameField[2][2]).equals("XXX") ||
+                    (gameField[0][0] + gameField[1][0] + gameField[2][0]).equals("XXX") ||
+                    (gameField[0][1] + gameField[1][1] + gameField[2][1]).equals("XXX") ||
+                    (gameField[0][2] + gameField[1][2] + gameField[2][2]).equals("XXX") ||
+                    (gameField[0][0] + gameField[1][1] + gameField[2][2]).equals("XXX") ||
+                    (gameField[0][2] + gameField[1][1] + gameField[2][0]).equals("XXX")) {
+                System.out.println("Игру выиграл игрок: " + firstPlayer);
+                break;
+            }
 
             System.out.println(gameField[0][0] + " | " + gameField[0][1] + " | " + gameField[0][2]);
             System.out.println("---------");
@@ -104,18 +117,18 @@ public class kresTicNolik {
             }while(!second);
 
 
-
-            if ((gameField[0][0] + gameField[0][1] + gameField[0][2]).equals("XXX") ||
-                    (gameField[1][0] + gameField[1][1] + gameField[1][2]).equals("XXX") ||
-                    (gameField[2][0] + gameField[2][1] + gameField[2][2]).equals("XXX") ||
-                    (gameField[0][0] + gameField[1][0] + gameField[2][0]).equals("XXX") ||
-                    (gameField[0][1] + gameField[1][1] + gameField[2][1]).equals("XXX") ||
-                    (gameField[0][2] + gameField[1][2] + gameField[2][2]).equals("XXX") ||
-                    (gameField[0][0] + gameField[1][1] + gameField[2][2]).equals("XXX") ||
-                    (gameField[0][2] + gameField[1][1] + gameField[2][0]).equals("XXX")) {
-                System.out.println("Игру выиграл игрок: " + firstPlayer);
+            if ((gameField[0][0] + gameField[0][1] + gameField[0][2]).equals("OOO") ||
+                    (gameField[1][0] + gameField[1][1] + gameField[1][2]).equals("OOO") ||
+                    (gameField[2][0] + gameField[2][1] + gameField[2][2]).equals("OOO") ||
+                    (gameField[0][0] + gameField[1][0] + gameField[2][0]).equals("OOO") ||
+                    (gameField[0][1] + gameField[1][1] + gameField[2][1]).equals("OOO") ||
+                    (gameField[0][2] + gameField[1][2] + gameField[2][2]).equals("OOO") ||
+                    (gameField[0][0] + gameField[1][1] + gameField[2][2]).equals("OOO") ||
+                    (gameField[0][2] + gameField[1][1] + gameField[2][0]).equals("OOO")) {
+                System.out.println("Игру выиграл игрок: " + secondPlayer);
                 break;
             }
+
 
             if (!gameField[0][0].equals("") && gameField[0][0] != "1" &&
                     !gameField[0][1].equals("") && gameField[0][1] != "2" &&
@@ -152,17 +165,7 @@ public class kresTicNolik {
             System.out.println("---------");
             System.out.println(gameField[2][0] + " | " + gameField[2][1] + " | " + gameField[2][2]);
 
-            if ((gameField[0][0] + gameField[0][1] + gameField[0][2]).equals("OOO") ||
-                    (gameField[1][0] + gameField[1][1] + gameField[1][2]).equals("OOO") ||
-                    (gameField[2][0] + gameField[2][1] + gameField[2][2]).equals("OOO") ||
-                    (gameField[0][0] + gameField[1][0] + gameField[2][0]).equals("OOO") ||
-                    (gameField[0][1] + gameField[1][1] + gameField[2][1]).equals("OOO") ||
-                    (gameField[0][2] + gameField[1][2] + gameField[2][2]).equals("OOO") ||
-                    (gameField[0][0] + gameField[1][1] + gameField[2][2]).equals("OOO") ||
-                    (gameField[0][2] + gameField[1][1] + gameField[2][0]).equals("OOO")) {
-                System.out.println("Игру выиграл игрок: " + secondPlayer);
-                break;
-            }
+
         }
     }
 }
